@@ -25,12 +25,13 @@ public class UsersController {
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("person", userService.getUserById(id));
+        model.addAttribute("user", userService.getUserById(id));
         return "show";
     }
 
     @GetMapping("/new")
-    public String newUser(@ModelAttribute("user") User user) {
+    public String newUser(Model model) {
+        model.addAttribute("user", new User());
         return "new";
     }
 
@@ -40,7 +41,6 @@ public class UsersController {
        if(bindingResult.hasErrors()) {
            return "new";
        }
-
         userService.save(user);
         return "redirect:/users";
     }

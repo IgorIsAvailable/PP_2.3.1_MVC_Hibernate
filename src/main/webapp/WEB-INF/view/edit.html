@@ -9,21 +9,21 @@
 
 <form th:method="PATCH" th:action="@{/users/{id}(id=${user.getId()})}" th:object="${user}">
     <label for="name">Enter name: </label>
-    <input type="text" th:field="*{name}" id="name">
+    <input type="text" th:field="*{name}" id="name"/>
     <div style="color:darkred" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
-    <br/>
+    <br>
     <label for="surname">Enter surname: </label>
-    <input type="text" th:field="*{surname}" id="surname">
+    <input type="text" th:field="*{surname}" id="surname"/>
     <div style="color:darkred" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname error</div>
-    <br/>
+    <br>
     <label for="age">Enter age: </label>
-    <input type="text" th:field="*{age}" id="age">
+    <input type="text" th:field="*{age}" id="age"/>
     <div style="color:darkred" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age error</div>
-    <br/>
+    <br>
     <label for="job">Enter job: </label>
-    <input type="text" th:field="*{job}" id="job">
+    <input type="text" th:field="*{job}" id="job"/>
     <div style="color:darkred" th:if="${#fields.hasErrors('job')}" th:errors="*{job}">Job error</div>
-    <br/>
+    <br>
     <input type="submit" th:value="Update!"/>
 </form>
 
