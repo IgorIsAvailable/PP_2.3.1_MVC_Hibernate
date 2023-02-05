@@ -24,7 +24,8 @@
     <input type="text" th:field="*{job}" id="job"/>
     <div style="color:darkred" th:if="${#fields.hasErrors('job')}" th:errors="*{job}">Job error</div>
     <br>
-    <input type="submit" th:value="Update!"/>
+    <hr/>
+    <input type="submit" value="Update!"/>
 </form>
 
 </body>

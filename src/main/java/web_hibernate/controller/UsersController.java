@@ -38,10 +38,10 @@ public class UsersController {
     @PostMapping
     public String createUser(@ModelAttribute("user") @Valid User user,
                              BindingResult bindingResult) {
-       if(bindingResult.hasErrors()) {
-           return "new";
-       }
-        userService.save(user);
+        if (bindingResult.hasErrors()) {
+            return "new";
+        }
+        userService.saveUser(user);
         return "redirect:/users";
     }
 
@@ -53,18 +53,12 @@ public class UsersController {
 
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("user") @Valid User user,
-                         BindingResult bindingResult, @PathVariable("id") Long id) {
-        if(bindingResult.hasErrors()) {
+                         BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             return "edit";
         }
 
-//        User updateUser = userService.getUserById(id);
-//        updateUser.setName(user.getName());
-//        updateUser.setSurname(user.getSurname());
-//        updateUser.setAge((byte) user.getAge());
-//        updateUser.setJob(user.getJob());
-
-        userService.save(user);
+        userService.saveUser(user);
         return "redirect:/users";
     }
 

@@ -8,6 +8,7 @@ import web_hibernate.model.User;
 
 import java.util.List;
 
+
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
@@ -15,7 +16,7 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
-    public void save(User user) {
+    public void saveUser(User user) {
         userDao.save(user);
     }
 
@@ -34,6 +35,5 @@ public class UserServiceImpl implements UserService {
     public void deleteUserById(Long id) {
         userDao.deleteById(id);
     }
-
 }
 
