@@ -19,7 +19,7 @@ public class User {
     private String surname;
     @Column(name = "age")
     @Min(value = 0, message = "Age should be greater 0")
-    private byte age;
+    private int age;
     @Column(name = "job")
     @NotEmpty(message = "Write your job")
     private String job;
@@ -27,7 +27,7 @@ public class User {
     public User() {
     }
 
-    public User(String name, String surname, byte age, String job) {
+    public User(String name, String surname, int age, String job) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -62,7 +62,7 @@ public class User {
         return age;
     }
 
-    public void setAge(byte age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

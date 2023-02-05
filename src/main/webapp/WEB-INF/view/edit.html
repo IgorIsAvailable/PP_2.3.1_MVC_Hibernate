@@ -17,7 +17,7 @@
     <div style="color:darkred" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname error</div>
     <br>
     <label for="age">Enter age: </label>
-    <input type="text" th:field="*{age}" id="age"/>
+    <input type="number" th:field="*{age}" id="age"/>
     <div style="color:darkred" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age error</div>
     <br>
     <label for="job">Enter job: </label>
